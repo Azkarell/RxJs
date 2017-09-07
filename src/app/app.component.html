@@ -5,12 +5,14 @@
   </h1>
 
   <div *ngIf="soe.tuple">
+  <h2>ObservableExample</h2>
   <label>string: {{soe.tuple.s}} </label><br>
   <label>number: {{soe.tuple.n}} </label>
   </div>
 </div>
 
-<div>
+<div style="text-align:center">
+  <h2>SubjectExample</h2>
   <input #n type="number" (keyup.enter)="put(n.value)"(blur)="put(n.value); number=0;"> <br>
   <label>string: {{string}} </label><br>
   <label>number: {{number}} </label>
