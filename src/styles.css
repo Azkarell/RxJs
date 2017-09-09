@@ -8,3 +8,8 @@
     text-align: center;
     top: 0;
 }
+
+.center {
+    text-align: center;
+    align-self: center;
+}

@@ -6,19 +6,25 @@ import { SubjectExampleComponent } from './subject-example/subject-example.compo
 import { SimpleObservableComponent } from './simple-observable/simple-observable.component';
 import { TabviewComponent } from './tabview/tabview.component';
 import { TabComponent } from './tab/tab.component';
-
+import { ViewerComponent } from './viewer/viewer.component';
+import { EventRouterService } from "./event-router.service";
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
     SubjectExampleComponent,
     SimpleObservableComponent,
     TabviewComponent,
-    TabComponent
+    TabComponent,
+    ViewerComponent,
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    
   ],
-  providers: [],
+  providers: [EventRouterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

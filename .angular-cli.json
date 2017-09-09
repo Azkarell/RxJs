@@ -9,6 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
+        {"glob": "**/*", "input": "./app", "output": "./assets/"},
         "favicon.ico"
       ],
       "index": "index.html",

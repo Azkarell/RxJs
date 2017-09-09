@@ -1,0 +1,17 @@
+
+
+<tabs>
+  <div class="floating">
+    <ng-content class="floating"></ng-content>
+  </div>
+  <div class="floating">
+  <tab *ngFor="let fi of fileinfos" [tabTitle]="fi.filename" >
+      <pre class="test">
+          
+        <code class="floating" >
+          {{fi.filecontent}}
+        </code>
+      </pre>
+    </tab>
+  </div>
+</tabs>

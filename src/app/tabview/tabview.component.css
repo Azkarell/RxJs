@@ -1,5 +1,6 @@
 
 
+
 ul {
     
     list-style-type: none;
@@ -17,11 +18,14 @@ li {
     padding: 16px;
     text-decoration: none;
     cursor: pointer;
+    -webkit-transition: background 0.4s;
+    transition: background 0.4s;
+   
 }
 
 
 
 li:hover {
+
     background-color: #111111;
 }
-

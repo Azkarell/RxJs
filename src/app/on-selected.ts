@@ -1,0 +1,4 @@
+export interface OnSelected {
+
+    OnSelected();
+}

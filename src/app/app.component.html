@@ -1,20 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="header" >
   <h1>
-    Welcome to {{title}}!
+    Welcome to {{ title}}!
   </h1>
 
   
  
 </div>
 
-<tabs>
-    <tab tabTitle="ObservableExample">
-      <app-simple-observable></app-simple-observable>
-      </tab>
-    <tab tabTitle="SubjectExample">
-      <app-subject-example></app-subject-example>
-      </tab>
+<tabs >
+    <tab tabTitle="ObservableExample" type="ObservableExample">
+      <viewer>
+          <observable-example></observable-example>
+      </viewer>
+    </tab>
+    <tab tabTitle="SubjectExample" type="SubjectExample">
+      <viewer>
+        <subject-example></subject-example>
+      </viewer>
+    </tab>
   </tabs>
 
 <div class="footer">

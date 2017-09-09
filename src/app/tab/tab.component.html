@@ -1,5 +1,5 @@
 
 
-<div [hidden]="!active" class="view">
-  <ng-content></ng-content>
+<div *ngIf="active">
+  <ng-content ></ng-content>
 </div>
