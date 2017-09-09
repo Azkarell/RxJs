@@ -4,11 +4,11 @@
   <div class="floating">
     <ng-content class="floating"></ng-content>
   </div>
-  <div class="floating">
+  <div class = "floating">
   <tab *ngFor="let fi of fileinfos" [tabTitle]="fi.filename" >
-      <pre class="test">
+      <pre >
           
-        <code class="floating" >
+        <code  highlight class="javascript">
           {{fi.filecontent}}
         </code>
       </pre>

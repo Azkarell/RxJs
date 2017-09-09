@@ -9,6 +9,9 @@ import { TabComponent } from './tab/tab.component';
 import { ViewerComponent } from './viewer/viewer.component';
 import { EventRouterService } from "./event-router.service";
 import { HttpModule } from '@angular/http';
+import { RouterModule } from "@angular/router";
+import { FileInformationService } from './file-information.service';
+import { HighlightDirective } from './highlight.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,14 +20,26 @@ import { HttpModule } from '@angular/http';
     TabviewComponent,
     TabComponent,
     ViewerComponent,
+    HighlightDirective,
     
   ],
+
   imports: [
     BrowserModule,
     HttpModule,
+    RouterModule.forRoot([ 
+      {
+        path:'ObservableExample',
+        component: SimpleObservableComponent
+      },
+      {
+        path: 'SubjectExample',
+        component: SubjectExampleComponent
+      }
+    ])
     
   ],
-  providers: [EventRouterService],
+  providers: [EventRouterService, FileInformationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

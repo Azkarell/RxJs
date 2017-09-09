@@ -16,13 +16,14 @@ export class TabComponent implements OnInit,  OnSelected, OnDestroy {
     if(this.sub){
       this.sub.unsubscribe();
     }
+    this.tabs.removeTab(this);
   }
 
   ngAfterContentInit(): void {
   }
   OnSelected() {
     if(this.type)
-      this.evR.put(this.type);
+      this.evR.put({filter:this.type});
     
   }
 
@@ -32,15 +33,16 @@ export class TabComponent implements OnInit,  OnSelected, OnDestroy {
   private contents: Fileinformation[];
   private sub: Subscription;
   active:boolean;
-  constructor(tabs: TabviewComponent, private evR: EventRouterService) {
+  constructor(private tabs: TabviewComponent, private evR: EventRouterService) {
       tabs.addTab(this);
-      if(this.type){
-        this.sub = this.evR.subscribe(this.type,() => this.evR.put("TabContentUpdate",this));
-        
-      }
+    
    }
 
   ngOnInit() {
+    if(this.type){
+      this.sub = this.evR.subscribe(this.type.trim() + "Update",() => this.evR.put({filter:"TabContentUpdate",value:this}));
+      
+    }
   }
 
   

@@ -3,7 +3,7 @@ import { Observable, BehaviorSubject, Subscription, Subject } from "rxjs/Rx";
 @Injectable()
 export class EventRouterService {
 
-  private subject : Subject<Event>;
+  private subject : Subject<Event<any>>;
   private sub;
   constructor() {
       this.subject = new Subject();
@@ -12,13 +12,12 @@ export class EventRouterService {
 
 
 
-   put(filter: string, value?:any){
-     console.log("putting: " +filter + " v: " +value );
-     this.subject.next({filter:filter, value:value});
+   put<T>(ev:Event<T>){
+     console.log("putting: " + ev.filter + " v: " + ev.value );
+     this.subject.next(ev);
    }
 
-   subscribe<T>(filter: string, callback: (value?:T) => void):Subscription{
-    
+   subscribe<T>(filter: string | number, callback: (t?:T) => void):Subscription{
      return this.subject.asObservable()
      .filter(v => v.filter === filter)
      .map(ev => <T> ev.value)
@@ -27,7 +26,7 @@ export class EventRouterService {
 
 }
 
-class Event {
-  constructor(public filter: string, public value:any){};
+export class Event<T> {
+  constructor(public filter: string | number, public value?:T){};
 }
 

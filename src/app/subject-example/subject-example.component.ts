@@ -7,6 +7,7 @@ import { EventRouterService } from "../event-router.service";
 import { Subscription } from "rxjs/Rx";
 import { Fileinformation } from "../fileinformation";
 import { Http, ResponseContentType } from '@angular/http';
+import { FileInformationService } from '../file-information.service';
 
 @Component({
   selector: 'subject-example',
@@ -18,7 +19,7 @@ export class SubjectExampleComponent implements OnInit, OnSelected, OnDestroy  {
     this.sub.unsubscribe();
   }
   OnSelected() {
-    this.evR.put("FileInformationUpdate",this.filecontents);
+    this.fileinfoservice.setFiles(this.filecontents);
   }
 
 
@@ -29,22 +30,26 @@ export class SubjectExampleComponent implements OnInit, OnSelected, OnDestroy  {
   private filecontents: Fileinformation[];
 
   private sub;
-  constructor(private evR: EventRouterService, private http: Http, private appref: ApplicationRef) { 
-    this.se = new SubjectExample();
-    this.sub = evR.subscribe("SubjectExample",()=>this.OnSelected());
-    this.se.getNumbers().subscribe(n => this.number = n);
-    this.se.getStrings().subscribe(n => this.string = n);
+  constructor(private fileinfoservice: FileInformationService, private http: Http, private evR: EventRouterService) { 
+   
 
   }
   private url = "assets/subject-example/";
   private headers : Headers;
   private filenames = ["subject-example.component.ts", "subject-example.ts"];
   ngOnInit() {
+    this.se = new SubjectExample();
+    this.se.getNumbers().subscribe(n => this.number = n);
+    this.se.getStrings().subscribe(n => this.string = n);
+    this.sub = this.evR.subscribe("SubjectExample", () => this.OnSelected());
     this.filecontents = [];
     this.filenames.forEach(element => {
       this.http.get(this.url + element, {responseType: ResponseContentType.Text})
       .map(r => new Fileinformation(element,r.text()) )
-      .subscribe(t => { this.filecontents.push(t); this.evR.put("SubjectExample")});
+      .subscribe(t => { this.filecontents.push(t);
+         this.evR.put({filter:"SubjectExampleUpdate"});
+         
+        });
      
     });
   }

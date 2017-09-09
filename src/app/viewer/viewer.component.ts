@@ -3,6 +3,7 @@ import { Fileinformation } from "../fileinformation";
 import { EventRouterService } from "../event-router.service";
 import { Subscription } from "rxjs/Rx";
 import { TabviewComponent } from '../tabview/tabview.component';
+import { FileInformationService } from '../file-information.service';
 
 @Component({
   selector: 'viewer',
@@ -18,19 +19,13 @@ export class ViewerComponent implements OnInit, OnDestroy{
   fileinfos : Fileinformation[] = [];
 
   private subscription: Subscription;
-  constructor(private evR: EventRouterService, private appref : ApplicationRef) {
-      this.subscription = this.evR.subscribe<Fileinformation[]>("FileInformationUpdate", (fis => 
-            
-          { 
-            this.tabs.clear();
-            this.fileinfos = fis;
-          })
-        );
-      }
-
+  constructor(private evR: EventRouterService, private appref : ApplicationRef, private fileinfoservice: FileInformationService) {
+ 
+      
+  }
   ngOnInit() {
     this.fileinfos = [];
-   
+    this.subscription = this.fileinfoservice.getFiles( t => this.fileinfos = t);
   }
 
 }
