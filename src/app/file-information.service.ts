@@ -7,9 +7,6 @@ import { Subscription, Subject } from 'rxjs';
 export class FileInformationService {
 
   private subject: Subject<Fileinformation[]>;
-  private update = "FileUpdate";
-  private datachanged = "dataChanged";
-  private fileinformation: Fileinformation[];
   private sub : Subscription;
   constructor(private evR: EventRouterService) { 
     this.subject = new Subject<Fileinformation[]>();
@@ -22,8 +19,7 @@ export class FileInformationService {
   }
 
   setFiles(files: Fileinformation[]) {
-    this.fileinformation = files;
-    this.subject.next(this.fileinformation);
+    this.subject.next(files);
   }
 
 }

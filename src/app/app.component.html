@@ -10,14 +10,22 @@
 
 <tabs >
     <tab tabTitle="ObservableExample" type="ObservableExample">
-      <viewer >
-          <observable-example></observable-example>
-      </viewer>
+        <observable-example class="floating"></observable-example>
+        
+          <source-code-viewer url='assets/simple-observable/'
+           [files]="['simple-observable.component.ts', 'simple-observable-example.ts', 
+           'simple-observable.component.html']" class="floating">
+          </source-code-viewer>
+          
     </tab>
     <tab tabTitle="SubjectExample" type="SubjectExample">
-      <viewer >
-        <subject-example></subject-example>
-      </viewer>
+        <subject-example class="floating"></subject-example>
+        
+        <source-code-viewer url='assets/subject-example/'
+        [files]="['subject-example.component.ts', 'subject-example.ts',
+         'subject-example.component.html']" class="floating">
+       </source-code-viewer>
+     
     </tab>
   </tabs>
 

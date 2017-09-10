@@ -6,12 +6,13 @@ import { SubjectExampleComponent } from './subject-example/subject-example.compo
 import { SimpleObservableComponent } from './simple-observable/simple-observable.component';
 import { TabviewComponent } from './tabview/tabview.component';
 import { TabComponent } from './tab/tab.component';
-import { ViewerComponent } from './viewer/viewer.component';
 import { EventRouterService } from "./event-router.service";
 import { HttpModule } from '@angular/http';
 import { RouterModule } from "@angular/router";
 import { FileInformationService } from './file-information.service';
 import { HighlightDirective } from './highlight.directive';
+import { ObservableExample1Component } from './observable-example-1/observable-example-1.component';
+import { SourceCodeViewerComponent } from './source-code-viewer/source-code-viewer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +20,9 @@ import { HighlightDirective } from './highlight.directive';
     SimpleObservableComponent,
     TabviewComponent,
     TabComponent,
-    ViewerComponent,
     HighlightDirective,
+    ObservableExample1Component,
+    SourceCodeViewerComponent,
     
   ],
 

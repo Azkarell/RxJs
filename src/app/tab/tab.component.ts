@@ -4,6 +4,7 @@ import { OnSelected } from "../on-selected";
 import { EventRouterService } from "../event-router.service";
 import { Fileinformation } from "../fileinformation";
 import { Subscription } from 'rxjs';
+import { SourceCodeViewerComponent } from '../source-code-viewer/source-code-viewer.component';
 
 @Component({
   selector: 'tab',
@@ -34,14 +35,14 @@ export class TabComponent implements OnInit,  OnSelected, OnDestroy {
   private sub: Subscription;
   active:boolean;
   constructor(private tabs: TabviewComponent, private evR: EventRouterService) {
+    this.active = false;
       tabs.addTab(this);
     
    }
 
   ngOnInit() {
     if(this.type){
-      this.sub = this.evR.subscribe(this.type.trim() + "Update",() => this.evR.put({filter:"TabContentUpdate",value:this}));
-      
+      this.sub = this.evR.subscribe(this.type + "Update",() => this.evR.put({filter:"TabContentUpdate",value:this}));
     }
   }
 

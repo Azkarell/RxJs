@@ -4,16 +4,14 @@ import { Observable, BehaviorSubject, Subscription, Subject } from "rxjs/Rx";
 export class EventRouterService {
 
   private subject : Subject<Event<any>>;
-  private sub;
+
   constructor() {
       this.subject = new Subject();
-      this.sub = this.subject.asObservable().subscribe(ev => console.log(ev.filter + " " + ev.value));
    }
 
 
 
    put<T>(ev:Event<T>){
-     console.log("putting: " + ev.filter + " v: " + ev.value );
      this.subject.next(ev);
    }
 

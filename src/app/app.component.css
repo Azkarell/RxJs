@@ -5,6 +5,15 @@
 }
 
 
+.floating {
+    width: 50%;
+    float: left;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+.floating::-webkit-scrollbar{
+    border: 0 border-style transparent;
+}
 .pre{
     border: 2px solid #000000;
     
