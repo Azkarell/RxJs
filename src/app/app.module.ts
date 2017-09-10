@@ -13,6 +13,7 @@ import { FileInformationService } from './file-information.service';
 import { HighlightDirective } from './highlight.directive';
 import { ObservableExample1Component } from './observable-example-1/observable-example-1.component';
 import { SourceCodeViewerComponent } from './source-code-viewer/source-code-viewer.component';
+import { ObservableExample2Component } from './observable-example2/observable-example2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { SourceCodeViewerComponent } from './source-code-viewer/source-code-view
     HighlightDirective,
     ObservableExample1Component,
     SourceCodeViewerComponent,
+    ObservableExample2Component,
     
   ],
 

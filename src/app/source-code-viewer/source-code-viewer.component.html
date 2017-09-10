@@ -2,7 +2,7 @@
 <div>
   <tabs>
     <tab *ngFor="let fi of filecontents" [tabTitle]="fi.filename">
-        <pre><code highlight style="text-align: left; height:500px"  >
+        <pre class="code"><code highlight   >
             {{fi.filecontent}}
           </code></pre>
     </tab>
