@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
-import * as hljs from "highlight.js"
+import * as hljs from "highlightjs"
 
 @Directive({
   selector: 'code[highlight]'

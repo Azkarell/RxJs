@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, OnChanges, AfterViewChecked, OnDestroy,
    ApplicationRef } from '@angular/core';
 import { SubjectExample } from "./subject-example";
-import { ViewerComponent } from "../viewer/viewer.component";
 import { OnSelected } from "../on-selected";
 import { EventRouterService } from "../event-router.service";
 import { Subscription } from "rxjs/Rx";
