@@ -14,6 +14,10 @@ import { HighlightDirective } from './highlight.directive';
 import { ObservableExample1Component } from './observable-example-1/observable-example-1.component';
 import { SourceCodeViewerComponent } from './source-code-viewer/source-code-viewer.component';
 import { ObservableExample2Component } from './observable-example2/observable-example2.component';
+import { IntroComponent } from './intro/intro.component';
+import { ObservabledefinitionComponent } from './observabledefinition/observabledefinition.component';
+import { ExampleViewerComponent } from './example-viewer/example-viewer.component';
+import { MoreComponent } from './more/more.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +29,10 @@ import { ObservableExample2Component } from './observable-example2/observable-ex
     ObservableExample1Component,
     SourceCodeViewerComponent,
     ObservableExample2Component,
+    IntroComponent,
+    ObservabledefinitionComponent,
+    ExampleViewerComponent,
+    MoreComponent,
     
   ],
 
@@ -33,12 +41,20 @@ import { ObservableExample2Component } from './observable-example2/observable-ex
     HttpModule,
     RouterModule.forRoot([ 
       {
-        path:'ObservableExample',
-        component: SimpleObservableComponent
+        path:'intro',
+        component: IntroComponent
       },
       {
-        path: 'SubjectExample',
-        component: SubjectExampleComponent
+        path:'observable',
+        component: ObservabledefinitionComponent
+      },
+      {
+        path:'example',
+        component: ExampleViewerComponent
+      },
+      {
+        path:'more',
+        component: MoreComponent
       }
     ])
     

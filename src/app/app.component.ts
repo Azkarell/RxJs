@@ -1,6 +1,7 @@
 import { Component, AfterViewChecked } from '@angular/core';
 import { EventRouterService } from "./event-router.service";
 import { Subscription } from "rxjs/Rx";
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,6 +16,7 @@ export class AppComponent{
   private subscription: Subscription;
 
   constructor(private evR: EventRouterService){
+    
   }
 
   setclass(s:string){

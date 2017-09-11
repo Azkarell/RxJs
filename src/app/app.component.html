@@ -4,36 +4,13 @@
     Welcome to {{ title}}!
   </h1>
 </div>
-
-<tabs >
-    <tab tabTitle="ObservableExample1">
-        <observable-example-1 class="floating"></observable-example-1>
-        
-          <source-code-viewer url='assets/observable-example-1/'
-           [files]="['observable-example-1.component.ts', 'observable-example-1.ts', 
-           'observable-example-1.component.html']" class="floating">
-          </source-code-viewer>
-          
-    </tab>
-    <tab tabTitle="ObservableExample2">
-        <observable-example2 class="floating"></observable-example2>
-        
-          <source-code-viewer url='assets/observable-example2/'
-           [files]="['observable-example2.component.ts', 'observable-example2.ts', 
-           'observable-example2.component.html']" class="floating">
-          </source-code-viewer>
-          
-    </tab>
-    <tab tabTitle="SubjectExample" type="SubjectExample">
-        <subject-example class="floating"></subject-example>
-        
-        <source-code-viewer url='assets/subject-example/'
-        [files]="['subject-example.component.ts', 'subject-example.ts',
-         'subject-example.component.html']" class="floating">
-       </source-code-viewer>
-     
-    </tab>
-  </tabs>
+<ul class="topnav">
+  <li><a routerLink="/intro" routerLinkActive="active">Einleitung</a></li>
+  <li><a routerLink="/observable" routerLinkActive="active">Was ist ein Observable?</a></li>
+  <li><a routerLink="/example" routerLinkActive="active">Examples</a></li>
+  <li><a routerLink="/more" routerLinkActive="active">Links</a></li>
+</ul>
+<router-outlet></router-outlet>
 
 <div class="footer">
   made by Daniel Schröder

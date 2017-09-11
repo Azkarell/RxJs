@@ -15,14 +15,13 @@ li {
     display: block;
     color: white;
     text-align: center;
-    padding: 16px;
+    padding: 14px 16px;
     text-decoration: none;
     cursor: pointer;
     -webkit-transition: background 0.4s;
     transition: background 0.4s;
    
 }
-
 
 
 li:hover {

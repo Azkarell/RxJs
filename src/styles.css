@@ -16,5 +16,56 @@
 
 
 body {
-    background: #B1B1B1;
+    background: #FFFFFF;
+    font-size: 24px;
+}
+
+h2 {
+    display: block;
+    background: #4CAF50;
+    width: 95%;
+    margin: 0 auto;
+    padding: 14px 16px;
+    color: white;
+    text-align: center;
+}
+h1 {
+    display: block;
+    background: #4CAF50;
+    padding: 14px 16px;
+    color: white;
+    margin: 0 auto;
+}
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #333;
+   
+}
+
+ul.topnav li { 
+    float: left;
+    }
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background 0.4s ;
+    -webkit-transition: background 0.4s ;
+}
+
+ul.topnav li a:hover:not(.active){background-color: #111}
+
+ul.topnav li a.active {background-color: #4CAF50}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li{float: none;}
 }

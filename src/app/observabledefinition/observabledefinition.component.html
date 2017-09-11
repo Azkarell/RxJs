@@ -1,0 +1,18 @@
+
+<div>
+  <h2>Observable</h2>
+  <ul class="outer">
+    <li>Blueprint von Operationen die auf einen Stream aufgeruft werden sollen.
+        <pre ><code highlight class="ts" style="font-size:24px">var observable = Observable.timer(0,1000).take(5)</code></pre>
+    </li>
+    
+    <li>Erst <b>subscribe</b> führt Code aus
+      <pre ><code highlight class="ts" style="font-size:24px">var subscription = obs.subscribe()</code></pre>
+    </li>
+    <li>Pro <b>subscribe</b> wird ein neuer Stream (soweit nicht anders verlangt) erstellt
+      <pre ><code highlight class="ts" style="font-size:24px">var subscription = obs.subscribe(callback_fun)<br/>var subscription2 = obs.subscribe(callback_fun)<br/></code></pre>
+      sind zwei verschiedene unabhängige Subscriptions
+     
+    </li>
+  </ul>
+</div>

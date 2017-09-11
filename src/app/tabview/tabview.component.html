@@ -1,4 +1,6 @@
 <ul>
-  <li *ngFor="let tab of tabs" (click)="selectTab(tab)">{{tab.tabTitle}}</li>
+  <li *ngFor="let tab of tabs" (click)="selectTab(tab)" 
+  [ngStyle]="{'background-color': tab.active ? '#4CAF50' : '#333' }">
+    {{tab.tabTitle}}</li>
 </ul>
 <ng-content></ng-content>

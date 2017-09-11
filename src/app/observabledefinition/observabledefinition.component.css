@@ -1,0 +1,16 @@
+div {
+    text-align: center;
+    display: block;
+}
+h2 {
+    font-size: 40px;
+}
+ul.outer {
+    width: 50%;
+   margin: 0 auto;
+}
+li {
+    text-align: left;
+    list-style-type: square;
+    font-size: 32px;
+}
