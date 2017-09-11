@@ -17,4 +17,7 @@ export class ObservableExample1{
         return this.obs.subscribe(callback);
     }
 
+    getObservable(){
+        return this.obs;
+    }
 }

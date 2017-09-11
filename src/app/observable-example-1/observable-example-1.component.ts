@@ -15,16 +15,19 @@ export class ObservableExample1Component implements OnInit {
   constructor() { 
     this.num =0 ;
   }
-
-
+//muss so deklariert werden oder kann nicht aufgerufen werden in callback;
+  setnum = (n:number) =>{
+    this.num = n;
+  }
   ngOnInit() {
     this.obsexample1 = new ObservableExample1(1000);
   }
+  
   setInterval(n:number){
     if(this.sub)
     this.sub.unsubscribe();
 
     this.obsexample1 = new ObservableExample1(n *1000);
-    this.sub = this.obsexample1.subcribe((n)=>this.num = n);
+    this.sub = this.obsexample1.subcribe(this.setnum);
   }
 }
