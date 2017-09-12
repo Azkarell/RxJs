@@ -13,11 +13,11 @@ export class ObservableExample1Component implements OnInit {
   num: number;
   sub: Subscription;
   constructor() { 
-    this.num =0 ;
+    this.num = 0 ;
   }
 //muss so deklariert werden oder kann nicht aufgerufen werden in callback;
   setnum = (n:number) =>{
-    this.num = n;
+    this.num = Math.random()*n;
   }
   ngOnInit() {
     this.obsexample1 = new ObservableExample1(1000);

@@ -1,8 +1,14 @@
 
 .float{
-    width: 50%;
-    float: left;
-    margin: 0 auto;
-    padding: 0;
     display: block;
+    float: none;
+    margin: auto;
+    padding: 0;
+    
+}
+
+.flex-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
 }

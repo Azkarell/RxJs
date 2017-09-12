@@ -18,6 +18,8 @@ import { IntroComponent } from './intro/intro.component';
 import { ObservabledefinitionComponent } from './observabledefinition/observabledefinition.component';
 import { ExampleViewerComponent } from './example-viewer/example-viewer.component';
 import { MoreComponent } from './more/more.component';
+import { SharedObservableExampleComponent } from './shared-observable-example/shared-observable-example.component';
+import { WhatsnextComponent } from './whatsnext/whatsnext.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { MoreComponent } from './more/more.component';
     ObservabledefinitionComponent,
     ExampleViewerComponent,
     MoreComponent,
+    SharedObservableExampleComponent,
+    WhatsnextComponent,
     
   ],
 

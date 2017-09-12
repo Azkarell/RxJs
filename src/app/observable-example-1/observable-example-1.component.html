@@ -5,9 +5,9 @@
 </p>
 <pre><code highlight>var obj = Observable.timer(0,1000)</code></pre>
 <p>
-    wenn du mich nun subscribst werde ich jede Sekunde eine neue Zahl generieren!
+    wenn du mich nun abonnierst (subscribe) werde ich jede Sekunde eine neue Zahl generieren!
 </p>
-<pre><code highlight class="ts">var sub = obj.subscribe((n:number) => this.num = n)</code></pre>
+<pre><code highlight class="ts">var sub = obj.subscribe((n:number) => this.num = Math.random()*n)</code></pre>
 <input class="subscribe" type="button" (click)="start()" value="Subscribe!">
 <label>Number is: {{num}}</label>
 </div>

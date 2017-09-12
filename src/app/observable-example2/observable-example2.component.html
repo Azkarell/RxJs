@@ -1,10 +1,11 @@
 <div>
-    <h2 class="header">ObservableExample-2</h2>
-    <p>Man kann mich aus vielen Dingen erstellen z.B. auch als String</p>
-    <pre><code highlight>var obs = Observable.of(magicString)</code></pre>
+    <h2>ObservableExample-2</h2>
+    <p>Man kann mich aus vielen Dingen erstellen z.B. auch aus einem String</p>
+    <pre><code highlight class="ts">var obs = Observable.of(magicString)</code></pre>
 
     <label>MagicString:</label>
     <input #n (keyup.enter)="setString(n.value)" type="text" class="textinput" value="MagicString">
     <br>
-    <label>string is: {{output}}</label>
+    <label>string is: {{output}}</label><br>
+    <label>string2 is: {{output2}}</label>
 </div>

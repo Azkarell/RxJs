@@ -1,0 +1,10 @@
+<h2>Shared Observable</h2>
+
+<p>Man kann mich auch zwischen Subscriptions teilen:</p>
+<pre><code highlight class="ts">var obs = Observable.timer(0,1000).share();</code></pre>
+<input type="button" (click)="add()" value="Add">
+<input type="button" (click)="addnot()" value="AddUnshared">
+<input type="button" (click)="remove()" value="Remove">
+<ul>
+ <li *ngFor="let n of numbers">{{n}}</li>
+</ul>

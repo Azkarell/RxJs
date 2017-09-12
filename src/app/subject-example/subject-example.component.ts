@@ -17,24 +17,21 @@ import { SourceCodeViewerComponent } from '../source-code-viewer/source-code-vie
 export class SubjectExampleComponent implements OnInit  {
 
 
-  private number: number;
   private string: string;
   private se: SubjectExample;
-
-  constructor(event: EventRouterService, infos: FileInformationService,  http: Http)  { 
+  private sub: Subscription;
+  constructor()  { 
 
   }
   
   
   ngOnInit() {
     this.se = new SubjectExample();
-    this.se.getNumbers().subscribe(n => this.number = n);
-    this.se.getStrings().subscribe(n => this.string = n);
-
+    this.sub = this.se.getSharedObservable().subscribe((s:string) => this.string = s);
   }
    
 
-  put(n:number){
+  put(n:string){
     this.se.put(n);
   }
 

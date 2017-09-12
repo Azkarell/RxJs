@@ -10,7 +10,7 @@ ul {
     background-color: #333333;
 }
 
-li {
+.myli {
     float: left;
     display: block;
     color: white;
@@ -24,7 +24,12 @@ li {
 }
 
 
-li:hover {
+.myli:hover:not(.active) {
 
     background-color: #111111;
+}
+
+
+.myli.active{
+    background-color: #4CAF50;
 }

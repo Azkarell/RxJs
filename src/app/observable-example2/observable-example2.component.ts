@@ -9,11 +9,11 @@ import { Subscription } from 'rxjs';
 })
 export class ObservableExample2Component implements OnInit {
 
-  n: number;
   output: string;
-  s2: string;
+  output2: string;
   obsexample2 : ObservableExample2;
   sub: Subscription;
+  sub2: Subscription;
   constructor() { }
 
   ngOnInit() {
@@ -22,11 +22,15 @@ export class ObservableExample2Component implements OnInit {
 
   setString(s:string){
    
-    this.s2 = s;
     this.obsexample2.setString(s);
-    var tmp = this.obsexample2.subscribe(st => this.output = st);
 
-    this.sub = tmp;
+    this.sub = this.obsexample2.subscribe(st => this.output = st);
+    setTimeout(() => {
+      this.sub2 = this.obsexample2.subscribe(st => this.output2 = st.toLocaleLowerCase());
+    },4000);
+    
+    
+
   }
 
 }

@@ -14,8 +14,9 @@ export class SourceCodeViewerComponent implements OnInit {
 
 @Input() url: string;
 @Input() files: string[];
+show : boolean;
   ngOnInit(): void {
-    
+    this.show = false;
     this.loadFromServer();
 }
 
@@ -37,5 +38,8 @@ loadFromServer(){
         .subscribe(t => { this.filecontents.push(t)});
        
       });
+}
+toggleShow(){
+    this.show = !this.show;
 }
 }

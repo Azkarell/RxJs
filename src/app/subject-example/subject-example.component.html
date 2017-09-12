@@ -2,7 +2,6 @@
 
 <div>
     <h2 class="header">SubjectExample</h2>
-    <input #n type="number" (keyup.enter)="put(n.value)"(blur)="put(n.value); number=0;"> <br>
+    <input #n type="text" (keyup.enter)="put(n.value)"(blur)="put(n.value); number=0;"> <br>
     <label>string: {{string}} </label><br>
-    <label>number: {{number}} </label>
   </div>

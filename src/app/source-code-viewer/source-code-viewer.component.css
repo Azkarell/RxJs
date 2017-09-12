@@ -4,3 +4,26 @@
     padding: 0;
     margin: 0;
 }
+
+.togglebutton{
+    padding: 14px 16px;
+    display: block;
+    margin: 0 auto;
+    border: 0 none white;
+    background: #333;
+    color: white;
+}
+
+.togglebutton:hover {
+    background: #111;
+}
+
+.togglebuttonfixed{
+    padding: 14px 16px;
+    display: block;
+    margin: 0 auto;
+    border: 0 none white;
+    background: #333;
+    color: white;
+    position: fixed top;
+}

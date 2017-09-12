@@ -1,21 +1,28 @@
 
 <div>
   <tabs>
-    <tab tabTitle="ObservableExample1">
-      <observable-example-1 class="float"></observable-example-1>
+    <tab tabTitle="ObservableExample1" class="flex-container">
+      <observable-example-1 class="float" ></observable-example-1>
       <source-code-viewer class="float" url="assets/observable-example-1/" 
       [files]="['observable-example-1.component.ts','observable-example-1.ts']"></source-code-viewer>
     </tab>
-    <tab tabTitle="ObservableExample2">
+    <tab tabTitle="ObservableExample2" class="flex-container">
         <observable-example2 class="float"></observable-example2>
-        <source-code-viewer class="flaot" url="assets/observable-example2/" 
+        <source-code-viewer  url="assets/observable-example2/" 
         [files]="['observable-example2.component.ts','observable-example2.ts']"></source-code-viewer>
       </tab>
-      <tab tabTitle="SubjectExample">
-          <subject-example class="float"></subject-example>
-          <source-code-viewer class="flaot" url="assets/subject-example/" 
+      <tab tabTitle="SharedObservable" class="flex-container">
+          <shared-observable-example></shared-observable-example>
+          <source-code-viewer  url="assets/shared-observable-example/" 
+          [files]="['shared-observable-example.component.ts','shared-observable-example.ts']"></source-code-viewer>
+        </tab>
+      <tab tabTitle="SubjectExample" class="flex-container">
+          <subject-example></subject-example>
+          <source-code-viewer  url="assets/subject-example/" 
           [files]="['subject-example.component.ts','subject-example.ts']"></source-code-viewer>
         </tab>
+
+       
   </tabs>
 
 

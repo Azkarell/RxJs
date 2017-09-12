@@ -64,6 +64,22 @@ ul.topnav li a.active {background-color: #4CAF50}
 
 ul.topnav li.right {float: right;}
 
+input[type=button]{
+    display: block;
+    background: #3A3DFF;
+    text-decoration: none;
+    font-size: 24px;
+    margin:  auto;
+    padding: 14px 16px;
+    color: white;
+    border-style: none;
+    transition: background 0.4s;
+    -webkit-transition: background 0.4s;
+}
+
+input[type=button]:hover{
+    background: #000236
+}
 @media screen and (max-width: 600px){
     ul.topnav li.right,
     ul.topnav li{float: none;}

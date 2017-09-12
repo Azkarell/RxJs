@@ -1,26 +1,25 @@
 import { Subject, Observable, Subscription, Subscriber } from "rxjs/Rx";
 
 export class SubjectExample {
-    private subject: Subject<number>;
+    private subject: Subject<string>;
     private subscription: Subscription;
 
     
     constructor(){
-        this.subject = new Subject();
-        var obs = Observable.interval(1000).filter(n => n % 2 == 0);
-        this.subscription = obs.subscribe((n) => this.subject.next(n));
+        this.subject = new Subject<string>();
         
     }
 
-    getNumbers(): Observable<number>{
+
+    getStringObservable(): Observable<string>{
         return this.subject.asObservable();
     }
-    getStrings(): Observable<string>{
-        return this.subject.asObservable().map((n)=>Math.random().toString(36).substr(7));
+
+    getSharedObservable(): Observable<string>{
+        return this.subject.asObservable().share();
     }
 
-    put(val:number){
-        console.log(val);
+    put(val:string){
         this.subject.next(val);
     }
 }
