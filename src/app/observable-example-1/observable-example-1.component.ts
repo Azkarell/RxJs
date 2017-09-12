@@ -23,11 +23,8 @@ export class ObservableExample1Component implements OnInit {
     this.obsexample1 = new ObservableExample1(1000);
   }
   
-  setInterval(n:number){
-    if(this.sub)
-    this.sub.unsubscribe();
-
-    this.obsexample1 = new ObservableExample1(n *1000);
+  start(){
+    if(this.sub) this.sub.unsubscribe();
     this.sub = this.obsexample1.subcribe(this.setnum);
   }
 }

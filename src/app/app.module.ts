@@ -55,6 +55,11 @@ import { MoreComponent } from './more/more.component';
       {
         path:'more',
         component: MoreComponent
+      },
+      {
+        path:'**', 
+        redirectTo: 'intro',
+        pathMatch: 'full'
       }
     ])
     

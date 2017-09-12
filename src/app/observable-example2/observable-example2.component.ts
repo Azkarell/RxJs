@@ -23,7 +23,8 @@ export class ObservableExample2Component implements OnInit {
   setString(s:string){
    
     this.s2 = s;
-    var tmp = this.obsexample2.subscribe(s => this.output = s + this.s2);
+    this.obsexample2.setString(s);
+    var tmp = this.obsexample2.subscribe(st => this.output = st);
 
     this.sub = tmp;
   }

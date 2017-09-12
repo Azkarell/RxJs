@@ -1,8 +1,7 @@
 
-<div>
-  <tabs>
+  <input type="button" value="Show">
+  <tabs *ngIf="show">
     <tab *ngFor="let fi of filecontents" [tabTitle]="fi.filename">
-    <pre class="code"><code highlight>{{fi.filecontent}}</code></pre>
+    <pre class="nopadding"><code highlight>{{fi.filecontent}}</code></pre>
     </tab>
   </tabs>
-</div>

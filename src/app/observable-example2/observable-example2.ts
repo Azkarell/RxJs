@@ -9,10 +9,15 @@ export class ObservableExample2 {
     
     obs1: Observable<string>
     constructor(){
-        this.obs1 = new ObservableExample1(1000).getObservable().map(n=> n.toString());
+
+    }
+
+    setString(s:String){
+        this.obs1 = <Observable<string>>Observable.of(s).map((st:string) => st.toLocaleUpperCase());
     }
 
     subscribe(callback:(s: string) => void): Subscription{
+   
         return this.obs1.subscribe(callback);
     }
 }
