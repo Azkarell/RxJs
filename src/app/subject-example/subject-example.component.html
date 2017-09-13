@@ -1,7 +1,9 @@
 <div>
   <h2 class="header">SubjectExample</h2>
-  <p>Observable.of() lässt keine neuen Werte zu.</p>
-  <p>=> Lösung Subjects</p>
+  <pre><code highlight style="display:block">Observable.of()</code></pre><p>lässt keine neuen Werte zu.</p>
+  <ul><li style="list-style: none">
+    => Lösung Subjects
+  </li></ul>
   <pre><code highlight class="ts">var subject = new Subject&lt;String&gt;();</code></pre>
   <p>hat die Funktionen</p>
   <pre><code highlight class="ts">subject.next("some string"); <br>subject.asObservable()</code></pre>
