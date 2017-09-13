@@ -1,5 +1,11 @@
 <div>
   <h2 class="header">SubjectExample</h2>
-  <input #n type="text" (keyup.enter)="put(n.value)" (blur)="put(n.value); number=0;"> <br>
+  <p>Observable.of() lässt keine neuen Werte zu.</p>
+  <p>=> Lösung Subjects</p>
+  <pre><code highlight class="ts">var subject = new Subject&lt;String&gt;();</code></pre>
+  <p>hat die Funktionen</p>
+  <pre><code highlight class="ts">subject.next("some string"); <br>subject.asObservable()</code></pre>
+  <p>welche es ermöglichen neue Werte in den Stream zu übergeben, welche von allen Abonnementen des Observables erhalten werden.</p>
+  <input #n type="text" (keyup.enter)="put(n.value)" > <br>
   <label>string: {{string}} </label><br>
 </div>

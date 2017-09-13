@@ -80,6 +80,13 @@ input[type=button]{
 input[type=button]:hover{
     background: #000236
 }
+
+input[type="text"]{
+    display: block;
+    margin: 0 auto;
+    padding: 14px 16px;
+    font-size: 24px;
+}
 @media screen and (max-width: 600px){
     ul.topnav li.right,
     ul.topnav li{float: none;}
