@@ -1,5 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, OnChanges, AfterViewChecked, OnDestroy,
-   ApplicationRef } from '@angular/core';
+import {
+  Component, OnInit, Output, EventEmitter, OnChanges, AfterViewChecked, OnDestroy,
+  ApplicationRef
+} from '@angular/core';
 import { SubjectExample } from "./subject-example";
 import { OnSelected } from "../on-selected";
 import { EventRouterService } from "../event-router.service";
@@ -14,26 +16,25 @@ import { SourceCodeViewerComponent } from '../source-code-viewer/source-code-vie
   templateUrl: './subject-example.component.html',
   styleUrls: ['./subject-example.component.css']
 })
-export class SubjectExampleComponent implements OnInit  {
+export class SubjectExampleComponent implements OnInit {
 
 
   private string: string;
   private se: SubjectExample;
   private sub: Subscription;
-  constructor()  { 
+  constructor() {
 
   }
-  
-  
+
+
   ngOnInit() {
     this.se = new SubjectExample();
-    this.sub = this.se.getSharedObservable().scan((acc,val,ind)=> acc += val).subscribe((s:string) => this.string = s);
-  }
-   
+    this.sub = this.se.getSharedObservable().scan((s1: string, s2: string) => s1 + " " + s2).subscribe(s => this.string = s);
 
-  put(n:string){
+  }
+  put(n: string) {
     this.se.put(n);
   }
 
-  
+
 }
