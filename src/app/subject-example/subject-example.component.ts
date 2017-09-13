@@ -27,7 +27,7 @@ export class SubjectExampleComponent implements OnInit  {
   
   ngOnInit() {
     this.se = new SubjectExample();
-    this.sub = this.se.getSharedObservable().subscribe((s:string) => this.string = s);
+    this.sub = this.se.getSharedObservable().scan((acc,val,ind)=> acc += val).subscribe((s:string) => this.string = s);
   }
    
 

@@ -1,14 +1,12 @@
-  <ng-container *ngIf="show; else elseTemplate">
-   <input type="button" value="Show" (click)="toggleShow()" class="togglebutton">
-   <tabs>
-      <tab *ngFor="let fi of filecontents" [tabTitle]="fi.filename">
-        <pre class="nopadding"><code highlight>{{fi.filecontent}}</code></pre>
-        </tab>
-      </tabs>
-  </ng-container>
-  <ng-template #elseTemplate>
-      <input type="button" value="Show" (click)="toggleShow()" class="togglebuttonfixed">
-      
-  </ng-template>
+<ng-container *ngIf="show; else elseTemplate">
+  <input type="button" value="Show" (click)="toggleShow()" class="togglebutton">
+  <tabs>
+    <tab *ngFor="let fi of filecontents" [tabTitle]="fi.filename">
+      <pre class="nopadding"><code highlight>{{fi.filecontent}}</code></pre>
+    </tab>
+  </tabs>
+</ng-container>
+<ng-template #elseTemplate>
+  <input type="button" value="Show" (click)="toggleShow()" class="togglebuttonfixed">
 
-   
+</ng-template>
